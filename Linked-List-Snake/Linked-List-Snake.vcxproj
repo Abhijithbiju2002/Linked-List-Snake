@@ -163,6 +163,7 @@
   <ItemGroup>
     <ClInclude Include="include\Level\LevelData.h" />
     <ClInclude Include="include\Level\LevelNumber.h" />
+    <ClInclude Include="include\Player\Direction.h" />
     <ClInclude Include="include\Time\TimeService.h" />
     <ClInclude Include="include\UI\Credits\CreditsScreenUIController.h" />
     <ClInclude Include="include\UI\Instructions\InstructionsScreenUIController.h" />

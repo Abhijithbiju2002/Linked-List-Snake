@@ -3,7 +3,6 @@
 
 namespace Player {
 
-	
 
 	class PlayerService
 	{

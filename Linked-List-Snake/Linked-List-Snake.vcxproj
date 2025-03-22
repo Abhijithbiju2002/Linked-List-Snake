@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\UI\LevelSelection\LevelSelectionUIController.cpp" />
     <ClCompile Include="source\Level\LevelController.cpp" />
     <ClCompile Include="source\Level\LevelService.cpp" />
     <ClCompile Include="source\Level\LevelView.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="include\Level\LevelView.h" />
     <ClInclude Include="include\Level\LevelController.h" />
     <ClInclude Include="include\Level\LevelService.h" />
+    <ClInclude Include="include\UI\LevelSelection\LevelSelectionUIController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

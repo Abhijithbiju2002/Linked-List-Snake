@@ -18,9 +18,8 @@ namespace Level{
 		float grid_height;
 
 		void createViews();
-		void initializeBackground();
-		void initializeBorder();
-		void calculateGridExtents();
+		
+		
 		void destroy();
 
 	public:
@@ -33,8 +32,11 @@ namespace Level{
 
 		void initialize();  // Lifecycle method
 		void update();      // Lifecycle method
-		void render();      // Lifecycle method
-
+		void render();  
+		// Lifecycle method
+		void calculateGridExtents();
+		void initializeBackground();
+		void initializeBorder();
 		float getGridWidth();
 		float getGridHeight();
 

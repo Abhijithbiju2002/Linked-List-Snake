@@ -41,7 +41,10 @@ namespace Level {
 	{
 		current_level = level_to_load;
 	}
-
+	void LevelService::spawnPlayer()
+	{
+		ServiceLocator::getInstance()->getPlayerService()->spawnPlayer();
+	}
 	void LevelService::destroy()
 	{
 		delete level_controller;

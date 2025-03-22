@@ -24,6 +24,7 @@ namespace Level {
 		void render();
 
 		void createLevel(LevelNumber level_to_load);
+		void spawnPlayer();
 	};
 
 }

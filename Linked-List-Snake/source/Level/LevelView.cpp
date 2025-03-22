@@ -16,6 +16,12 @@ namespace Level {
 
 		destroy();
 	}
+	void LevelView::createViews()
+	{
+		background_rectangle = new RectangleShapeView();
+		border_rectangle = new RectangleShapeView();
+	}
+
 	void LevelView::initialize() {
 
 		initializeBackground();
@@ -62,9 +68,6 @@ namespace Level {
 	void LevelView::update() {
 		background_rectangle->update();
 		border_rectangle->update();
-
-	}
-	void LevelView::createViews() {
 
 	}
 	void LevelView::render() {

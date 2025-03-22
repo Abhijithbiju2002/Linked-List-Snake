@@ -5,6 +5,7 @@
 namespace Level{
 	using namespace UI::UIElement;
 	using namespace sf;
+
 	class LevelView
 	{
 	private:

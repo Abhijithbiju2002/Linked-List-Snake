@@ -32,10 +32,23 @@ namespace Player {
 		Vector2f getBodyPartScreenPosition();
 		float getRotationAngle();
 		void setDirection(Direction direction);
+
+		Vector2i getNextPosition();
+		Vector2i getNextPositionDown();
+		Vector2i getNextPositionUp();
+		Vector2i getNextPositionRight();
+		Vector2i getNextPositionLeft();
+
+		void setPosition(sf::Vector2i position);
+
 		void updatePosition();
 		void update();
 		void render();
 		void destroy();
+
+		Direction setDirection();
+
+		Vector2i getPosition();
 
 		
 	};

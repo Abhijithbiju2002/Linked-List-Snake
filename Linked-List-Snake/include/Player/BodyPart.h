@@ -21,6 +21,8 @@ namespace Player {
 
 		void createBodyPartImage();
 
+		
+
 	public:
 		BodyPart();
 		~BodyPart();
@@ -28,6 +30,9 @@ namespace Player {
 		void initialize(float width,float height,Vector2i pos,Direction dir);
 		void initializeBodyPartImage();
 		Vector2f getBodyPartScreenPosition();
+		float getRotationAngle();
+		void setDirection(Direction direction);
+		void updatePosition();
 		void update();
 		void render();
 		void destroy();

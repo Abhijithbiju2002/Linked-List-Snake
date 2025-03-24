@@ -17,7 +17,13 @@ namespace LinkedList {
 		default_direction = direction;
 	}
 	void SingleLinkedList::render() {
-
+		//head_node->body_part.render();
+	}
+	
+	void SingleLinkedList::createHeadNote() {
+		head_node = createNode();
+		head_node->body_part.initialize(node_width, node_height, default_position, default_direction);
+		return;
 	}
 	Node* SingleLinkedList::createNode() {
 

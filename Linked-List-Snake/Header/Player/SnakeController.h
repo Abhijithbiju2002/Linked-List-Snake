@@ -3,11 +3,6 @@
 #include "../../Header/Player/Direction.h"
 #include "../../Header/LinkedList/SingleLinkedList.h"
 
-//namespace LinkedList {
-//	class SingleLinkedList;
-//}
-
-
 namespace Player {
 	
 	using namespace LinkedList;

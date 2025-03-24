@@ -1,10 +1,12 @@
 #include "../../Header/Player/SnakeController.h"
 #include "../../Header/Global/ServiceLocator.h"
-//#include "../../include/LinkedList/SingleLinkedList.h"
+//#include "../../Header/Level/LevelService.h"
+
 
 namespace Player {
 	using namespace LinkedList;
 	using namespace Global;
+	//using namespace Level;
 
 	SnakeController::SnakeController()
 	{
@@ -44,13 +46,14 @@ namespace Player {
 
 		case SnakeState::DEAD:
 			handleRestart();
+			break;
 
 		}
 	}
 
 	void SnakeController::render()
 	{
-
+		//single_linked_list->render();
 	}
 	void SnakeController::processPlayerInput() {
 
@@ -68,7 +71,7 @@ namespace Player {
 
 	}
 	void SnakeController::spawnSnake() {
-		single_linked_list->createHeadNote();
+		//single_linked_list->createHeadNote();
 	}
 	void SnakeController::reset() {
 
@@ -83,7 +86,7 @@ namespace Player {
 		return current_snake_state;
 	}
 	void SnakeController::destroy() {
-
+		//delete(single_linked_list);
 	}
 
 

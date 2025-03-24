@@ -102,6 +102,7 @@ namespace Global
 	UIService* ServiceLocator::getUIService() { return ui_service; }
 
 	TimeService* ServiceLocator::getTimeService() { return time_service; }
+
 	LevelService* ServiceLocator::getLevelService() { return level_service; }
 
 	PlayerService* ServiceLocator::getPlayerService() { return player_service; }

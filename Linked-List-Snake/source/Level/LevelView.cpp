@@ -1,7 +1,7 @@
-#include "Level/LevelView.h"
-#include "Global/ServiceLocator.h"
-#include "Graphics/GraphicService.h"
-#include "UI/UIElement/RectangleShapeView.h"
+#include "../../Header/Level/LevelView.h"
+#include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Graphics/GraphicService.h"
+#include "../../Header/UI/UIElement/RectangleShapeView.h"
 
 namespace Level {
 	

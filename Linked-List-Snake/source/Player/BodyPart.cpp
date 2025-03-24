@@ -1,6 +1,6 @@
-#include "Player/BodyPart.h"
-#include"Global/Config.h"
-#include"Level/LevelView.h"
+#include "../../Header/Player/BodyPart.h"
+#include"../../Header/Global/Config.h"
+#include"../../Header/Level/LevelView.h"
 
 using namespace Global;
 using namespace Level;
@@ -57,7 +57,7 @@ namespace Player {
 	
 	void BodyPart::createBodyPartImage()
 	{
-		bodypart_image = new UI::UIElement::ImageView;
+		bodypart_image = new ImageView;
 	}
 	void BodyPart::setDirection(Direction direction) {
 		this->direction = direction;

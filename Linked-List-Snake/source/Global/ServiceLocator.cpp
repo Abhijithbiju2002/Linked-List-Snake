@@ -1,8 +1,9 @@
-#include "Global/ServiceLocator.h"
-#include "Main/GameService.h"
+#include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Main/GameService.h"
 
 namespace Global
 {
+
 	using namespace Graphics;
 	using namespace Event;
 	using namespace Sound;
@@ -100,8 +101,8 @@ namespace Global
 
 	UIService* ServiceLocator::getUIService() { return ui_service; }
 
-	Time::TimeService* ServiceLocator::getTimeService() { return time_service; }
-	Level::LevelService* ServiceLocator::getLevelService() { return level_service; }
+	TimeService* ServiceLocator::getTimeService() { return time_service; }
+	LevelService* ServiceLocator::getLevelService() { return level_service; }
 
 	PlayerService* ServiceLocator::getPlayerService() { return player_service; }
 

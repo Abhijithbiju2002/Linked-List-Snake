@@ -1,6 +1,6 @@
-#include "Level/LevelController.h"
-#include "Level/LevelModel.h"
-#include "Level/LevelView.h"
+#include "../../Header/Level/LevelController.h"
+#include "../../Header/Level/LevelModel.h"
+#include "../../Header/Level/LevelView.h"
 #include <iostream>
 
 namespace Level {

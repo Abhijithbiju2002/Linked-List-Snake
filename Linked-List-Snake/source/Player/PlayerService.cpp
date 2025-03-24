@@ -1,5 +1,5 @@
-#include "Player/PlayerService.h"
-#include "Player/SnakeController.h"
+#include "../../Header/Player/PlayerService.h"
+#include "../../Header/Player/SnakeController.h"
 
 namespace Player {
 

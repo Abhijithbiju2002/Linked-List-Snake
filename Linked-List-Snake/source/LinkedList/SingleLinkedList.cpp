@@ -1,6 +1,7 @@
-#include "LinkedList/SingleLinkedList.h"
-#include "Player/BodyPart.h"
-#include "Level/LevelView.h"
+#include "../../Header/LinkedList/SingleLinkedList.h"
+#include "../../Header/Player/BodyPart.h"
+#include "../../Header/Level/LevelView.h"
+#include <iostream>
 
 namespace LinkedList {
 
@@ -17,7 +18,7 @@ namespace LinkedList {
 		default_direction = direction;
 	}
 	void SingleLinkedList::render() {
-		//head_node->body_part.render();
+		head_node->body_part.render();
 	}
 	
 	void SingleLinkedList::createHeadNote() {

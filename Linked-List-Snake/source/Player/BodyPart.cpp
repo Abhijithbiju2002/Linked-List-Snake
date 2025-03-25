@@ -1,6 +1,7 @@
 #include "../../Header/Player/BodyPart.h"
 #include"../../Header/Global/Config.h"
 #include"../../Header/Level/LevelView.h"
+#include <iostream>
 
 using namespace Global;
 using namespace Level;
@@ -16,6 +17,7 @@ namespace Player {
 
 	BodyPart::~BodyPart()
 	{
+
 	}
 	void BodyPart::initialize(float width, float height, Vector2i pos, Direction dir)
 	{
@@ -28,8 +30,14 @@ namespace Player {
 
 	}
 	void BodyPart::initializeBodyPartImage() {
-		bodypart_image ->initialize(Config::snake_body_texture_path,bodypart_width,
-	    bodypart_height, getBodyPartScreenPosition());
+		/*std::cout << "Snake texture path. " << Config::snake_body_texture_path.toAnsiString() << std::endl;
+		std::cout << "get body part height " << bodypart_height << std::endl;
+		std::cout << "get body part widh " << bodypart_width << std::endl;
+		std::cout << "get body part screen x position " << getBodyPartScreenPosition().x<<
+			"get y position " << getBodyPartScreenPosition().y << std::endl;*/
+
+		bodypart_image->initialize(Config::snake_body_texture_path, bodypart_width, bodypart_height, getBodyPartScreenPosition());
+		
 		bodypart_image->setOriginAtCentre();
 	}
 	Vector2f BodyPart::getBodyPartScreenPosition()
@@ -110,6 +118,10 @@ namespace Player {
 
 	void BodyPart::render()
 	{
+		if (bodypart_image == nullptr) {
+			std::cerr << "Error: head_node is null in render()" << std::endl;
+			return;
+		}
 		bodypart_image->render();
 	}
 
@@ -117,10 +129,12 @@ namespace Player {
 	{
 		delete bodypart_image;
 	}
-	Direction BodyPart::setDirection() {
+	Direction BodyPart::getDirection() {
+
 		return direction;
 	}
 	Vector2i BodyPart::getPosition() {
+
 		return grid_position;
 	}
 

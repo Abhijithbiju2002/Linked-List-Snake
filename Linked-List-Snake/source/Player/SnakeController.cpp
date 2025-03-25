@@ -20,7 +20,7 @@ namespace Player {
 	}
 	void SnakeController::createLinkedList()
 	{
-		single_linked_list = new LinkedList::SingleLinkedList();
+		single_linked_list = new SingleLinkedList();
 	}
 
 	void SnakeController::initialize()
@@ -53,7 +53,7 @@ namespace Player {
 
 	void SnakeController::render()
 	{
-		//single_linked_list->render();
+		single_linked_list->render();
 	}
 	void SnakeController::processPlayerInput() {
 
@@ -71,7 +71,10 @@ namespace Player {
 
 	}
 	void SnakeController::spawnSnake() {
-		//single_linked_list->createHeadNote();
+		for (int i = 0; i < initial_snake_lengeth;i++) {
+
+			single_linked_list->insertNodeAtTail();
+		}
 	}
 	void SnakeController::reset() {
 
@@ -86,7 +89,7 @@ namespace Player {
 		return current_snake_state;
 	}
 	void SnakeController::destroy() {
-		//delete(single_linked_list);
+		delete(single_linked_list);
 	}
 
 

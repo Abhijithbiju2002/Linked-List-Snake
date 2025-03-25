@@ -22,7 +22,7 @@ namespace Player {
 		SnakeState current_snake_state;
 		Direction current_snake_direction;
 
-		LinkedList::SingleLinkedList* single_linked_list;
+		SingleLinkedList* single_linked_list;
 
 		void processPlayerInput();
 		void updateSnakeDirection();

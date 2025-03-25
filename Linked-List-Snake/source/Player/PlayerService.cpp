@@ -17,6 +17,7 @@ namespace Player {
 	}
 	void PlayerService::initialize() {
 		snake_controller->initialize();
+		spawnPlayer();
 	}
 	void PlayerService::update() {
 		snake_controller->update();

@@ -27,5 +27,7 @@ namespace LinkedList {
 		void render();
 
 		void createHeadNote();
+		Vector2i getNewNodePosition(Node* refernce_node);
+		void insertNodeAtTail();
 	};
 }

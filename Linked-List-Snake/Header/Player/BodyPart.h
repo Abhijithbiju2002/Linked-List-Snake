@@ -46,7 +46,7 @@ namespace Player {
 		void render();
 		void destroy();
 
-		Direction setDirection();
+		Direction getDirection();
 
 		Vector2i getPosition();
 

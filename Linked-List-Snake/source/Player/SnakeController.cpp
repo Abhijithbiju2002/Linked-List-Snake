@@ -94,17 +94,17 @@ namespace Player {
 	void SnakeController::handleRestart() {
                         
 	}
-	//void SnakeController::delayedUpdate() {
-	//	/*elapsed_duration += ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
+	void SnakeController::delayedUpdate() {
+		elapsed_duration += ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
 
-	//	if (elapsed_duration >= movement_frame_duration)
-	//	{
-	//		elapsed_duration = 0.f;
-	//		updateSnakeDirection();
-	//		processSnakeCollision();
-	//		moveSnake();
-	//	}*/
-	//}
+		if (elapsed_duration >= movement_frame_duration)
+		{
+			elapsed_duration = 0.f;
+			updateSnakeDirection();
+			processSnakeCollision();
+			moveSnake();
+		}
+	}
 	void SnakeController::spawnSnake() {
 		for (int i = 0; i < initial_snake_lengeth;i++) {
 

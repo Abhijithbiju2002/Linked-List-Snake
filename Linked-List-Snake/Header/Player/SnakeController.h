@@ -21,6 +21,8 @@ namespace Player {
 
 		const float movement_frame_duration = 0.1f;
 
+		float elapsed_duration = 0.f;
+
 		SnakeState current_snake_state;
 		Direction current_snake_direction;
 
@@ -44,7 +46,7 @@ namespace Player {
 		void initialize();     
 		void update();   
 		void render();   
-		//void delayedUpdate();
+		void delayedUpdate();
 		void spawnSnake();
 		void respawnSnake();
 		void setSnakeState(SnakeState state);

@@ -91,6 +91,27 @@ namespace LinkedList {
 		cur_node->body_part.getDirection());
 		
 	}
+	void SingleLinkedList::updateNodeDirection(Direction direction_to_set) {
+
+		Node* cur_node = head_node;
+
+		while (cur_node != nullptr) {
+
+			Direction previous_direction = cur_node->body_part.getDirection();
+			cur_node->body_part.setDirection(direction_to_set);
+			direction_to_set = previous_direction;
+			cur_node = cur_node->next;
+		}
+	}
+	void SingleLinkedList::updateNodePosition() {
+
+		Node* cur_node = head_node;
+
+		while (cur_node != nullptr) {
+			cur_node->body_part.updatePosition();
+			cur_node = cur_node->next;
+		}
+	}
 	Node* SingleLinkedList::createNode() {
 
 		return new Node();

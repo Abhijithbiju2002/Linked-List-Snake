@@ -1,12 +1,14 @@
 #include "../../Header/Player/SnakeController.h"
 #include "../../Header/Global/ServiceLocator.h"
-//#include "../../Header/Level/LevelService.h"
+#include "../../Header/Level/LevelService.h"
+//#include "../../Header/UI/UIElement/AnimatedImageView.h"
 
 
 namespace Player {
 	using namespace LinkedList;
 	using namespace Global;
-	//using namespace Level;
+	//using namespace UI::UIElement;
+	using namespace Level;
 
 	SnakeController::SnakeController()
 	{
@@ -29,7 +31,8 @@ namespace Player {
 		float width = ServiceLocator::getInstance()->getLevelService()->getCellWidth();
 		float height = ServiceLocator::getInstance()->getLevelService()->getCellHeight();
 
-		
+		current_snake_direction = Direction::RIGHT;
+
 		single_linked_list->initialize(width, height, default_position, default_direction);
 	}
 
@@ -91,6 +94,17 @@ namespace Player {
 	void SnakeController::handleRestart() {
                         
 	}
+	//void SnakeController::delayedUpdate() {
+	//	/*elapsed_duration += ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
+
+	//	if (elapsed_duration >= movement_frame_duration)
+	//	{
+	//		elapsed_duration = 0.f;
+	//		updateSnakeDirection();
+	//		processSnakeCollision();
+	//		moveSnake();
+	//	}*/
+	//}
 	void SnakeController::spawnSnake() {
 		for (int i = 0; i < initial_snake_lengeth;i++) {
 

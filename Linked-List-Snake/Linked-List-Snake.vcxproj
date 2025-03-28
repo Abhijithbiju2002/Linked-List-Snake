@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Element\Obstacle.cpp" />
     <ClCompile Include="source\LinkedList\SingleLinkedList.cpp" />
     <ClCompile Include="source\Player\BodyPart.cpp" />
     <ClCompile Include="source\Player\PlayerService.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="source\UI\UIElement\UIView.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header\Element\ElementService.h" />
     <ClInclude Include="Header\Level\LevelData.h" />
     <ClInclude Include="Header\Level\LevelNumber.h" />
     <ClInclude Include="Header\LinkedList\SingleLinkedList.h" />
@@ -195,6 +197,7 @@
     <ClInclude Include="Header\UI\LevelSelection\LevelSelectionUIController.h" />
     <ClInclude Include="Header\Player\PlayerService.h" />
     <ClInclude Include="Header\Player\SnakeController.h" />
+    <ClInclude Include="Header\Element\Obstacle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

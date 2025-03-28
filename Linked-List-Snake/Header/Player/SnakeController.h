@@ -15,12 +15,14 @@ namespace Player {
 	{
 	private:
 		const int initial_snake_lengeth = 10;
+
+		const int restart_duration = 2.f;
 		
 		const sf::Vector2i default_position = sf::Vector2i(25, 13);
 		const Direction default_direction = Direction::RIGHT;
 
 		const float movement_frame_duration = 0.1f;
-
+		float restart_counter;
 		float elapsed_duration = 0.f;
 
 		SnakeState current_snake_state;
@@ -49,6 +51,7 @@ namespace Player {
 		void delayedUpdate();
 		void spawnSnake();
 		void respawnSnake();
+		
 		
 		void setSnakeState(SnakeState state);
 		SnakeState getSnakeState();

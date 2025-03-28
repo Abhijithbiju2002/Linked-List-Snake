@@ -49,6 +49,7 @@ namespace Player {
 		void delayedUpdate();
 		void spawnSnake();
 		void respawnSnake();
+		
 		void setSnakeState(SnakeState state);
 		SnakeState getSnakeState();
 		

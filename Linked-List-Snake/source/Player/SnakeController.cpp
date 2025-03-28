@@ -126,6 +126,7 @@ namespace Player {
 	void SnakeController::respawnSnake(){
 
 	}
+	
 	void SnakeController::setSnakeState(SnakeState state) {
 		current_snake_state = state;
 	}

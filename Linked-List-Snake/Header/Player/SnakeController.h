@@ -11,12 +11,17 @@ namespace Player {
 		ALIVE,
 		DEAD,
 	};
+	enum InputState
+	{
+		WAITING,
+		PROCESSING
+	};
 	class SnakeController
 	{
 	private:
 		const int initial_snake_lengeth = 10;
 
-		const int restart_duration = 2.f;
+		const int restart_duration = 0.f;
 		
 		const sf::Vector2i default_position = sf::Vector2i(25, 13);
 		const Direction default_direction = Direction::RIGHT;
@@ -27,6 +32,7 @@ namespace Player {
 
 		SnakeState current_snake_state;
 		Direction current_snake_direction;
+		InputState current_input_state;
 
 		SingleLinkedList* single_linked_list;
 

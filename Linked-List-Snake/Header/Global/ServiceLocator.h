@@ -6,6 +6,7 @@
 #include "../../Header/Level/LevelService.h"
 #include "../../Header/Player/PlayerService.h"
 #include "../../Header/Event/EventService.h"
+#include "../../Header/Element/ElementService.h"
 
 
 
@@ -25,6 +26,7 @@ namespace Global
         TimeService* time_service;
         Level::LevelService* level_service;
         Player::PlayerService* player_service;
+        Element::ElementService* element_service;
 
         ServiceLocator();
         ~ServiceLocator();
@@ -46,6 +48,7 @@ namespace Global
         TimeService* getTimeService();
         Level::LevelService* getLevelService();
         Player::PlayerService* getPlayerService();
+        Element::ElementService* getElementService();
 
         void deleteServiceLocator();
     };

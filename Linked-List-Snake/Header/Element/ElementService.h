@@ -1,19 +1,28 @@
 #pragma once
+#include <vector>
 #include <SFML/System/Vector2.hpp>
 
-namespace Element {
-	enum class ElementType
-	{
-		OBSTACLE,
-	};
-	struct ElementData
-	{
-		ElementData(ElementType type, sf::Vector2i pos) {
-			element_type = type;
-			position = pos;
-		}
-		ElementType element_type;
-		sf::Vector2i position;
+namespace Element
+{
+	class Obstacle;
+	struct ElementData;
 
+
+	class ElementService
+	{
+	private:
+		std::vector<Obstacle*> obstacle_list;
+
+		void spawnObstacle(sf::Vector2i position, float cell_width, float cell_height);
+
+	public:
+		ElementService();
+		~ElementService();
+
+		void initialize();
+		void update();
+		void render();
+
+		const void spawnElements(std::vector<ElementData>& element_data_list, float cell_width, float cell_height);
 	};
 }

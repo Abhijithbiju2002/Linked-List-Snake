@@ -36,4 +36,10 @@ namespace Level {
     float LevelController::getCellHeight() {
         return level_model->getCellHeight();
     }
+    const std::vector<Element::ElementData>& LevelController::getElementDataList(int level_to_load) {
+        return level_model->getElementDataList(level_to_load);
+    }
+    //{
+        // TODO: insert return statement here
+   // }
 }

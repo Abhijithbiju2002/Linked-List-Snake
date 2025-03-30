@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Food\FoodItem.cpp" />
     <ClCompile Include="source\Element\Obstacle.cpp" />
     <ClCompile Include="source\LinkedList\SingleLinkedList.cpp" />
     <ClCompile Include="source\Player\BodyPart.cpp" />
@@ -165,8 +166,10 @@
     <ClCompile Include="source\UI\UIElement\UIView.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header\Food\FoodItem.h" />
     <ClInclude Include="Header\Element\ElementData.h" />
     <ClInclude Include="Header\Element\ElementService.h" />
+    <ClInclude Include="Header\Food\FoodType.h" />
     <ClInclude Include="Header\Level\LevelData.h" />
     <ClInclude Include="Header\Level\LevelNumber.h" />
     <ClInclude Include="Header\LinkedList\SingleLinkedList.h" />

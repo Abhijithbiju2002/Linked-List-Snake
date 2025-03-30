@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "../../Header/Level/LevelService.h"
 #include "../../Header/Level/LevelNumber.h"
 #include"../../Header/Element/ElementData.h"
@@ -15,6 +16,6 @@ namespace Level {
 		}
 
 		LevelNumber level_index;
-		std::vector<Element::ElementData>* element_data_list;
+		std::vector<Element::ElementData>*element_data_list;
 	};
 }

@@ -61,8 +61,8 @@ namespace Player {
 
 	void SnakeController::processPlayerInput() {
 
-		if (current_input_state == InputState::PROCESSING)
-			return;
+		//if (current_input_state == InputState::PROCESSING)
+		//	return;
 
 		EventService* event_service = ServiceLocator::getInstance()->getEventService();
 
@@ -140,7 +140,7 @@ namespace Player {
 		current_snake_direction = default_direction;
 		elapsed_duration = 0.f;
 		restart_counter = 0.f;
-		current_input_state = InputState::WAITING;
+		//current_input_state = InputState::WAITING;
 
 
 	}

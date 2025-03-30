@@ -48,7 +48,7 @@ namespace Global
         TimeService* getTimeService();
         Level::LevelService* getLevelService();
         Player::PlayerService* getPlayerService();
-        Element::ElementService* getElementService();
+       Element::ElementService* getElementService();
 
         void deleteServiceLocator();
     };

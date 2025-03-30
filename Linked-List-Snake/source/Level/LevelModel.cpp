@@ -1,6 +1,7 @@
 #include "../../Header/Level/LevelModel.h"
 #include "../../Header/Level/LevelService.h"
 #include "../../Header/Element/ElementService.h"
+//#include "../../Header/Level/LevelData.h"
 
 namespace Level {
 	using namespace Element;
@@ -10,8 +11,9 @@ namespace Level {
 	LevelModel::~LevelModel() = default;
 
 	void LevelModel::initialize(int width, int height) {
-		cell_width = width / number_of_columns;
-		cell_height = height / number_of_rows;
+		cell_width = static_cast<float>(width) / static_cast<float>(number_of_columns);
+		cell_height = static_cast<float>(height) / static_cast<float>(number_of_rows);
+
 		initializeLevelData();
 	}
 	void LevelModel::initializeLevelData() {
@@ -19,7 +21,7 @@ namespace Level {
 		level_configurations.push_back(LevelData(LevelNumber::TWO, &level_two_element_list));
 
 	}
-	const std::vector<ElementData>& LevelModel::getElementDataList(int level_to_load) {
+	const std::vector<ElementData>& LevelModel::getElementDataList(int level_to_load) const {
 
 		return *level_configurations[level_to_load].element_data_list;
 	}

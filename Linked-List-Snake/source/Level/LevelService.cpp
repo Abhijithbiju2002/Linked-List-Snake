@@ -61,7 +61,7 @@ namespace Level {
 		float cell_height = level_controller->getCellHeight();
 
 			std::vector<ElementData> element_data_list = level_controller->getElementDataList((int)level_to_load);
-	ServiceLocator::getInstance()->getElementService()->spawnElements(element_data_list, cell_width, cell_height);
+	        ServiceLocator::getInstance()->getElementService()->spawnElements(element_data_list, cell_width, cell_height);
 	}
 	void LevelService::spawnPlayer()
 	{

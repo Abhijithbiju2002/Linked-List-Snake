@@ -1,13 +1,15 @@
 #include "../../Header/Food/FoodService.h"
 #include "../../Header/Food/FoodItem.h"
 #include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Level/LevelModel.h"
 
 
 namespace Food {
+	using namespace std;
 	using namespace Level;
 	using namespace Global;
 
-	FoodService::FoodService()
+	FoodService::FoodService():random_engine(random_device())
 	{
 		current_food_item = nullptr;
 	}
@@ -15,6 +17,18 @@ namespace Food {
 	FoodService::~FoodService()
 	{
 		destroyFood();
+	}
+
+	Vector2i FoodService::getRandomPosition()
+	{
+		// Coordinate distribution for selecting a random position for food
+		uniform_int_distribution<int> x_distribution(0, LevelModel::number_of_columns - 1);
+		uniform_int_distribution<int> y_distribution(0, LevelModel::number_of_rows - 1);
+
+		int x_position = x_distribution(random_engine);
+		int y_position = y_distribution(random_engine);
+
+		return Vector2i(x_position,y_position);
 	}
 
 	void FoodService::startFoodSpawning()
@@ -45,9 +59,36 @@ namespace Food {
 		return food;
 	
 	}
+	bool FoodService::isValidPosition(std::vector<sf::Vector2i> position_data, sf::Vector2i food_position) {
+
+		for (int i = 0; i < position_data.size();i++) {
+			if (food_position == position_data[i])return false;
+		}
+		return true;
+	}
+	sf::Vector2i FoodService::getValidSpawnPosition() {
+
+		std::vector<sf::Vector2i> player_position_data = ServiceLocator::getInstance()->getPlayerService()->
+			getCurrentSnakePositionList();
+		std::vector<sf::Vector2i> elements_position_data = ServiceLocator::getInstance()->getElementService()->
+			getElementsPositionList();
+		sf::Vector2i spawn_position;
+
+		do spawn_position = getRandomPosition();
+		while (!isValidPosition(player_position_data, spawn_position) ||
+			!isValidPosition(elements_position_data, spawn_position));
+
+		return spawn_position;
+
+	}
+	FoodType FoodService::getRandomFoodType() {
+
+		std::uniform_int_distribution<int> distribution(0, FoodItem::number_of_foods - 1);
+		return static_cast<FoodType>(distribution(random_engine));
+	}
 	void FoodService::spawnFood()
 	{
-		current_food_item = createFood(sf::Vector2i(4, 6), FoodType::BURGER);
+		current_food_item = createFood(getValidSpawnPosition(),getRandomFoodType());
 	}
 
 	void FoodService::destroyFood()

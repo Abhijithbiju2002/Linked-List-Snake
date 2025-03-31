@@ -19,12 +19,17 @@ namespace Element {
 		void initializeObstacleImage();
 		Vector2f getObstacleImagePosition();
 
+		
+
+		
+
 	public:
 		Obstacle();
 		~Obstacle();
 
 		void initialize(Vector2i grid_pos,float width,float height);
 		
+		sf::Vector2i getObstaclePosition();
 		void update();
 		void render();
 		

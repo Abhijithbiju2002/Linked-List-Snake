@@ -36,6 +36,9 @@ namespace Element {
 		float screen_position_y = LevelView::border_offset_top + (cell_height * grid_position.y);
 		return Vector2f(screen_position_x, screen_position_y);
 	}
+	sf::Vector2i Obstacle::getObstaclePosition() {
+		return grid_position;
+	}
 	void Obstacle::update()
 	{
 		obstacle_image->update();

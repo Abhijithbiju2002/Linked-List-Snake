@@ -25,6 +25,10 @@ namespace Player {
 	void PlayerService::render() {
 		snake_controller->render();
 	}
+	std::vector<sf::Vector2i> PlayerService::getCurrentSnakePositionList() {
+
+		return snake_controller->getCurrentSnakePositionList();
+	}
 	void  PlayerService::spawnPlayer() {
 
 		snake_controller->spawnSnake();

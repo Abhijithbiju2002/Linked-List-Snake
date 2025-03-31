@@ -22,6 +22,8 @@ namespace Player {
 		void update();
 		void render();
 
+		std::vector<sf::Vector2i> getCurrentSnakePositionList();
+
 		void spawnPlayer();
 	};
 }

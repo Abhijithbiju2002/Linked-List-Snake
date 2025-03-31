@@ -33,7 +33,8 @@ namespace Food {
 
 		void update();
 		void render();
-		
+
+		sf::Vector2i getFoodPosition();
 		FoodType getFoodType();
 		
 	};

@@ -2,6 +2,7 @@
 #include <SFML/System/Vector2.hpp>
 #include <vector>
 #include <random>
+#include "../../Header/LinkedList/SingleLinkedList.h"
 
 namespace Food {
 	using namespace std;
@@ -38,7 +39,7 @@ namespace Food {
 		
 		void spawnFood();
 
-		void destroyFood();
+		
 		void reset();
 
 	public:
@@ -55,6 +56,10 @@ namespace Food {
 		void handleFoodSpawning();
 
 		
+		bool processFoodCollision(LinkedList::Node* head_node, FoodType& out_food_type);
+
+		void destroyFood();
+
 		void stopFoodSpawning();
 
 		void initialize();

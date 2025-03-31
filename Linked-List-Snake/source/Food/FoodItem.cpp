@@ -68,6 +68,10 @@ namespace Food {
 	{
 		food_image->render();
 	}
+	sf::Vector2i FoodItem::getFoodPosition()
+	{
+		return grid_position;
+	}
 
 	FoodType FoodItem::getFoodType()
 	{

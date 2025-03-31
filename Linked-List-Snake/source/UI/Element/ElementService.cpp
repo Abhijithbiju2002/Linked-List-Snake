@@ -26,6 +26,17 @@ namespace Element {
 			obstacle_list[i]->render();
 		}
 	}
+	bool ElementService::processElementsCollision(LinkedList::Node* head_node) {
+
+		for (int i = 0;i < obstacle_list.size();i++) {
+			if (obstacle_list[i]->getObstaclePosition() == head_node->body_part.getNextPosition() ||
+				obstacle_list[i]->getObstaclePosition() == head_node->body_part.getPosition()){
+				
+				return true;
+			}
+		}
+		return false;
+	}
 
 	const void ElementService::spawnElements(std::vector<ElementData>& element_data_list, float cell_width, float cell_height)
 	{

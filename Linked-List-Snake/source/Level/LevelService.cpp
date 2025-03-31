@@ -3,10 +3,12 @@
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/Element/ElementService.h"
 
+
 namespace Level {
 
 	using namespace Element;
 	using namespace Global;
+	
 
 	LevelService::LevelService() {
 		level_controller = nullptr;
@@ -49,11 +51,17 @@ namespace Level {
 		return level_controller->getCellHeight();
 	}
 
+	void LevelService::spawnFood()
+	{
+		ServiceLocator::getInstance()->getFoodService()->startFoodSpawning();
+	}
+
 	void LevelService::createLevel(LevelNumber level_to_load)
 	{
 		current_level = level_to_load;
 		spawnLevelElements(level_to_load);
 		spawnPlayer();
+		spawnFood();
 	}
 	void LevelService::spawnLevelElements(LevelNumber level_to_load) {
 

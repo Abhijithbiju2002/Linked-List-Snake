@@ -7,6 +7,7 @@
 #include "../../Header/Player/PlayerService.h"
 #include "../../Header/Event/EventService.h"
 #include "../../Header/Element/ElementService.h"
+#include "../../Header/Food/FoodService.h"
 
 
 
@@ -15,6 +16,7 @@ namespace Global
     using namespace Event;
     using namespace Sound;
     using namespace Time;
+    using namespace Food;//
 
     class ServiceLocator
     {
@@ -27,6 +29,7 @@ namespace Global
         Level::LevelService* level_service;
         Player::PlayerService* player_service;
         Element::ElementService* element_service;
+        FoodService* food_service;
 
         ServiceLocator();
         ~ServiceLocator();
@@ -48,7 +51,8 @@ namespace Global
         TimeService* getTimeService();
         Level::LevelService* getLevelService();
         Player::PlayerService* getPlayerService();
-       Element::ElementService* getElementService();
+        Element::ElementService* getElementService();
+        FoodService* getFoodService();
 
         void deleteServiceLocator();
     };

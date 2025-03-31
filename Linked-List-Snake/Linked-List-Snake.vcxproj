@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -133,6 +133,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Food\FoodService.cpp" />
+    <ClCompile Include="source\Food\FoodItem.cpp" />
+    <ClCompile Include="source\Element\Obstacle.cpp" />
+    <ClCompile Include="source\LinkedList\SingleLinkedList.cpp" />
+    <ClCompile Include="source\Player\BodyPart.cpp" />
+    <ClCompile Include="source\Player\PlayerService.cpp" />
+    <ClCompile Include="source\Player\SnakeController.cpp" />
+    <ClCompile Include="source\UI\Element\ElementService.cpp" />
+    <ClCompile Include="source\UI\LevelSelection\LevelSelectionUIController.cpp" />
+    <ClCompile Include="source\Level\LevelController.cpp" />
+    <ClCompile Include="source\Level\LevelService.cpp" />
+    <ClCompile Include="source\Level\LevelView.cpp" />
+    <ClCompile Include="source\Level\LevelModel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source\Time\TimeService.cpp" />
     <ClCompile Include="source\UI\Credits\CreditsScreenUIController.cpp" />
@@ -154,25 +167,44 @@
     <ClCompile Include="source\UI\UIElement\UIView.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Time\TimeService.h" />
-    <ClInclude Include="include\UI\Credits\CreditsScreenUIController.h" />
-    <ClInclude Include="include\UI\Instructions\InstructionsScreenUIController.h" />
-    <ClInclude Include="include\UI\UIElement\AnimatedImageView.h" />
-    <ClInclude Include="include\UI\UIElement\ButtonView.h" />
-    <ClInclude Include="include\Global\Config.h" />
-    <ClInclude Include="include\Event\EventService.h" />
-    <ClInclude Include="include\Main\GameService.h" />
-    <ClInclude Include="include\Graphics\GraphicService.h" />
-    <ClInclude Include="include\UI\UIElement\ImageView.h" />
-    <ClInclude Include="include\UI\Interface\IUIController.h" />
-    <ClInclude Include="include\UI\MainMenu\MainMenuUIController.h" />
-    <ClInclude Include="include\Global\ServiceLocator.h" />
-    <ClInclude Include="include\Sound\SoundService.h" />
-    <ClInclude Include="include\UI\SplashScreen\SplashScreenUIController.h" />
-    <ClInclude Include="include\UI\UIElement\RectangleShapeView.h" />
-    <ClInclude Include="include\UI\UIElement\TextView.h" />
-    <ClInclude Include="include\UI\UIService.h" />
-    <ClInclude Include="include\UI\UIElement\UIView.h" />
+    <ClInclude Include="Header\Food\FoodService.h" />
+    <ClInclude Include="Header\Food\FoodItem.h" />
+    <ClInclude Include="Header\Element\ElementData.h" />
+    <ClInclude Include="Header\Element\ElementService.h" />
+    <ClInclude Include="Header\Food\FoodType.h" />
+    <ClInclude Include="Header\Level\LevelData.h" />
+    <ClInclude Include="Header\Level\LevelNumber.h" />
+    <ClInclude Include="Header\LinkedList\SingleLinkedList.h" />
+    <ClInclude Include="Header\Player\BodyPart.h" />
+    <ClInclude Include="Header\Player\Direction.h" />
+    <ClInclude Include="Header\LinkedList\Node.h" />
+    <ClInclude Include="Header\Time\TimeService.h" />
+    <ClInclude Include="Header\UI\Credits\CreditsScreenUIController.h" />
+    <ClInclude Include="Header\UI\Instructions\InstructionsScreenUIController.h" />
+    <ClInclude Include="Header\UI\UIElement\AnimatedImageView.h" />
+    <ClInclude Include="Header\UI\UIElement\ButtonView.h" />
+    <ClInclude Include="Header\Global\Config.h" />
+    <ClInclude Include="Header\Event\EventService.h" />
+    <ClInclude Include="Header\Main\GameService.h" />
+    <ClInclude Include="Header\Graphics\GraphicService.h" />
+    <ClInclude Include="Header\UI\UIElement\ImageView.h" />
+    <ClInclude Include="Header\UI\Interface\IUIController.h" />
+    <ClInclude Include="Header\UI\MainMenu\MainMenuUIController.h" />
+    <ClInclude Include="Header\Global\ServiceLocator.h" />
+    <ClInclude Include="Header\Sound\SoundService.h" />
+    <ClInclude Include="Header\UI\SplashScreen\SplashScreenUIController.h" />
+    <ClInclude Include="Header\UI\UIElement\RectangleShapeView.h" />
+    <ClInclude Include="Header\UI\UIElement\TextView.h" />
+    <ClInclude Include="Header\UI\UIService.h" />
+    <ClInclude Include="Header\UI\UIElement\UIView.h" />
+    <ClInclude Include="Header\Level\LevelModel.h" />
+    <ClInclude Include="Header\Level\LevelView.h" />
+    <ClInclude Include="Header\Level\LevelController.h" />
+    <ClInclude Include="Header\Level\LevelService.h" />
+    <ClInclude Include="Header\UI\LevelSelection\LevelSelectionUIController.h" />
+    <ClInclude Include="Header\Player\PlayerService.h" />
+    <ClInclude Include="Header\Player\SnakeController.h" />
+    <ClInclude Include="Header\Element\Obstacle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

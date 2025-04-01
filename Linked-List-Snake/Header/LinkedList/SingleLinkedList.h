@@ -41,11 +41,15 @@ namespace LinkedList {
 		void insertNodeAtTail();
 		void insertNodeAtIndex(int index);
 		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
+		int findMiddleNode();
+		void insertNodeAtMiddle();
 		void updateNodeDirection(Direction direction_to_set);
 		void updateNodePosition();
 		bool processNodeCollision();
 		void removeNodeAtHead();
 		void removeAllNodes();
+
+		void insertNodeAt(int index);
 
 		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
 

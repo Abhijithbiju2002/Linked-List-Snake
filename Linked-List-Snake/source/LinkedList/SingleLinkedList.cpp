@@ -43,7 +43,17 @@ namespace LinkedList {
 		//head_node->body_part.render();
 		
 	}
-	
+	void SingleLinkedList::initializeNode(Node* new_node, Node* reference_node, Operation operation) {
+		if (reference_node == nullptr) {
+
+			new_node->body_part.initialize(node_width, node_height, default_position, default_direction);
+			return;
+		}
+		Vector2i position = getNewNodePosition(reference_node, operation);
+
+		new_node->body_part.initialize(node_width, node_height, position, reference_node->body_part.getDirection());
+
+	}
 	void SingleLinkedList::createHeadNote() {
 		head_node = createNode();
 		head_node->body_part.initialize(node_width, node_height, default_position, default_direction);
@@ -141,6 +151,16 @@ namespace LinkedList {
 		while (head_node != nullptr) {
 			removeNodeAtHead();
 		}
+	}
+	sf::Vector2i SingleLinkedList::getNewNodePosition(Node* reference_node, Operation operation) {
+
+		switch (operation) {
+		case Operation::HEAD:
+			return reference_node->body_part.getNextPosition();
+		case Operation::TAIL:
+			return reference_node->body_part.getPrevPosition();
+		}
+		return default_position;
 	}
 	std::vector<sf::Vector2i> SingleLinkedList::getNodePositionList()
 	{

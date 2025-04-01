@@ -41,6 +41,8 @@ namespace Player {
 
 		void setPosition(sf::Vector2i position);
 
+		Vector2i getPrevPosition();
+
 		void updatePosition();
 		void update();
 		void render();

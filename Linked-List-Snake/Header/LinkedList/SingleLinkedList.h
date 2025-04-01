@@ -17,6 +17,8 @@ namespace LinkedList {
 		float node_width;
 		float node_height;
 
+		int linked_list_size;
+
 		sf::Vector2i default_position;
 		Direction default_direction;
 
@@ -35,6 +37,7 @@ namespace LinkedList {
 
 		void createHeadNote();
 		Vector2i getNewNodePosition(Node* refernce_node);
+		void insertNodeAtHead();
 		void insertNodeAtTail();
 		void updateNodeDirection(Direction direction_to_set);
 		void updateNodePosition();

@@ -25,12 +25,15 @@ namespace LinkedList {
 		node_height = height;
 		default_position = position;
 		default_direction = direction;
+
+		linked_list_size = 0;
 		//createHeadNote();
 		///for (int i = 0; i < 5; i++) {
 		//insertNodeAtTail();
 		//}
 		
 	}
+
 	void SingleLinkedList::render() {
 
 		Node* cur_node = head_node;
@@ -79,6 +82,22 @@ namespace LinkedList {
 			break;
 		}
 		return default_position;
+	}
+	void SingleLinkedList::insertNodeAtHead() {
+
+		linked_list_size++;
+		Node* new_node = createNode();
+
+		if (head_node == nullptr) {
+			head_node = new_node;
+			initializeNode(new_node, nullptr, Operation::HEAD);
+			return;
+		}
+
+		initializeNode(new_node, head_node, Operation::HEAD);
+		new_node->next = head_node;
+		head_node = new_node;
+
 	}
 	void SingleLinkedList::insertNodeAtTail() {
 

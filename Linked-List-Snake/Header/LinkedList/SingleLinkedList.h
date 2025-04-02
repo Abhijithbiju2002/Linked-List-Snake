@@ -63,6 +63,8 @@ namespace LinkedList {
 
 		void removeNodeAtMiddle();
 
+		void removeNodeAtTail();
+
 		Node* getHeadNode();
 
 		

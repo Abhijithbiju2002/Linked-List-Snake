@@ -66,10 +66,14 @@ namespace Food {
 
 	void FoodService::update()
 	{
-		//if(current_food_item)current_food_item->update();
+		
 		if (current_spawning_status == FoodSpawningStatus::ACTIVE) {
 			updateElapsedDuration();
 			handleFoodSpawning();
+		}
+		//Minor Fix: Ensures food always exists
+		if (!current_food_item) {
+			spawnFood();
 		}
 		if (current_food_item)current_food_item->update();
 	}
@@ -81,6 +85,7 @@ namespace Food {
 	FoodItem* FoodService::createFood(sf::Vector2i position, FoodType type)
 	{
 		FoodItem* food = new FoodItem();
+		if (!food) return nullptr; //  Minor Fix: Prevents memory allocation failure crash
 		food->initialize(position, cell_width, cell_height, type);
 		return food;
 	
@@ -130,6 +135,7 @@ namespace Food {
 	void FoodService::destroyFood()
 	{
 		if (current_food_item) delete(current_food_item);
+		current_food_item = nullptr; // Minor Fix: Prevents dangling pointer issue
 	}
 	void FoodService::reset()
 	{

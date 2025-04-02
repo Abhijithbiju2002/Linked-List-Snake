@@ -49,11 +49,19 @@ namespace LinkedList {
 		void removeNodeAtHead();
 		void removeAllNodes();
 
-		void insertNodeAt(int index);
+		//void insertNodeAt(int index);
 
 		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
 
 		std::vector<sf::Vector2i> getNodePositionList();
+
+		void shiftNodesAfterRemoval(Node* cur_node);
+
+		void removeNodeAtIndex(int index);
+
+		void removeNodeAt(int index);
+
+		void removeNodeAtMiddle();
 
 		Node* getHeadNode();
 

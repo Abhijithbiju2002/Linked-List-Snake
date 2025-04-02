@@ -207,6 +207,7 @@ namespace LinkedList {
 			cur_node = cur_node->next;
 		}
 	}
+	
 	bool SingleLinkedList::processNodeCollision()
 	{
 		if (head_node == nullptr) return false;
@@ -260,6 +261,53 @@ namespace LinkedList {
 		}
 		return nodes_position_list;
 	}
+	void SingleLinkedList::shiftNodesAfterRemoval(Node* cur_node) {
+		if (cur_node == nullptr) return;
+
+		Node* next_node = cur_node->next;
+
+		while (next_node != nullptr) {
+			cur_node->body_part.setPosition(next_node->body_part.getPosition());
+			cur_node->body_part.setDirection(next_node->body_part.getDirection());
+
+			cur_node = next_node;
+			next_node = next_node->next;
+		}
+	}
+	void SingleLinkedList::removeNodeAtIndex(int index) {
+		if (index < 0 || index >= linked_list_size) return;
+
+		if (index == 0) {
+			removeNodeAtHead();
+			return;
+		}
+		int current_index = 0;
+		Node* cur_node = head_node;
+		Node* prev_node = nullptr;
+
+		while (cur_node != nullptr && current_index < index) {
+			prev_node = cur_node;
+			cur_node = cur_node->next;
+			current_index++;
+		}
+		if (cur_node == nullptr)return;
+
+		prev_node->next = cur_node->next;
+		shiftNodesAfterRemoval(cur_node);
+		delete cur_node;
+		linked_list_size--;
+	}
+	void  SingleLinkedList::removeNodeAt(int index) {
+		if (index < 0 || index >= linked_list_size)return;
+		removeNodeAtIndex(index);
+	}
+	void SingleLinkedList::removeNodeAtMiddle() {
+		if (head_node == nullptr)return;
+
+		int midIndex = findMiddleNode();
+		removeNodeAt(midIndex);
+	}
+
 	Node* SingleLinkedList::getHeadNode()
 	{
 		return head_node;

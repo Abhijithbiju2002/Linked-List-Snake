@@ -69,6 +69,12 @@ namespace LinkedList {
 
 		void removeHalfNodes();
 
+		Direction getReverseDirection(Direction reference_direction);
+
+		void reverseNodeDirections();
+
+		Direction reverse();
+
 		Node* getHeadNode();
 
 		

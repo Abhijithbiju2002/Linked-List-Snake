@@ -69,6 +69,8 @@ namespace Player {
 		bodypart_image = new ImageView;
 	}
 	void BodyPart::setDirection(Direction direction) {
+
+		previous_direction = this->direction;
 		this->direction = direction;
 	}
 	void BodyPart::updatePosition() {
@@ -146,6 +148,10 @@ namespace Player {
 	void BodyPart::destroy()
 	{
 		delete bodypart_image;
+	}
+	Direction BodyPart::getPreviousDirection()
+	{
+		return Direction();
 	}
 	Direction BodyPart::getDirection() {
 

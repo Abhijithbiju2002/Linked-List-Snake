@@ -19,6 +19,8 @@ namespace Player {
 		float bodypart_width;
 		float bodypart_height;
 
+		Direction previous_direction; 
+
 		void createBodyPartImage();
 
 		
@@ -47,6 +49,9 @@ namespace Player {
 		void update();
 		void render();
 		void destroy();
+
+
+		Direction getPreviousDirection();
 
 		Direction getDirection();
 

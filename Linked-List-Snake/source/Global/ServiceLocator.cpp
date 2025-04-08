@@ -24,7 +24,7 @@ namespace Global
 		time_service = nullptr;
 		level_service = nullptr;
 		player_service = nullptr;
-
+		
 		createServices();
 	}
 
@@ -41,6 +41,7 @@ namespace Global
 		player_service = new PlayerService();
 		element_service = new ElementService();
 		food_service = new FoodService();
+		gameplay_ui_controller = new UI::GameplayUI::GameplayUIController();
 	}
 
 	void ServiceLocator::initialize()
@@ -54,6 +55,7 @@ namespace Global
 		player_service->initialize();
 		element_service->initialize();
 		food_service->initialize();
+		gameplay_ui_controller->initialize();
 	}
 
 	void ServiceLocator::update()
@@ -69,6 +71,7 @@ namespace Global
 			player_service->update();
 			element_service->update();
 			food_service->update();
+			gameplay_ui_controller->update();
 		}
 	}
 
@@ -84,6 +87,7 @@ namespace Global
 			food_service->render();
 		}
 		ui_service->render();
+		gameplay_ui_controller->render();
 	}
 
 	void ServiceLocator::clearAllServices()
@@ -97,6 +101,7 @@ namespace Global
 		delete(player_service);
 		delete(element_service);
 		delete(food_service);
+		delete(gameplay_ui_controller);
 	}
 
 	ServiceLocator* ServiceLocator::getInstance()
@@ -122,6 +127,16 @@ namespace Global
 	ElementService* ServiceLocator::getElementService() { return element_service; }
 
 	FoodService* ServiceLocator::getFoodService() { return food_service; }
+
+	UI::GameplayUI::GameplayUIController* ServiceLocator::getGameplayUIController()
+	{
+		return gameplay_ui_controller;
+	}
+
+	//void ServiceLocator::setGameplayUIController(UI::GameplayUI::GameplayUIController* controller)
+	//{
+	//	gameplay_ui_controller = controller;
+	//}
 	
 
 

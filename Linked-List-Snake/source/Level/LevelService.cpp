@@ -71,6 +71,10 @@ namespace Level {
 			std::vector<ElementData> element_data_list = level_controller->getElementDataList((int)level_to_load);
 	        ServiceLocator::getInstance()->getElementService()->spawnElements(element_data_list, cell_width, cell_height);
 	}
+	LevelNumber LevelService::getCurrentLevel()
+	{
+		return current_level;
+	}
 	void LevelService::spawnPlayer()
 	{
 		ServiceLocator::getInstance()->getPlayerService()->spawnPlayer();

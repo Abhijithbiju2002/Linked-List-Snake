@@ -48,7 +48,7 @@ namespace LinkedList {
 		bool processNodeCollision();
 		void removeNodeAtHead();
 		void removeAllNodes();
-
+		Direction getReverseDirection(Direction reference_direction);
 		//void insertNodeAt(int index);
 
 		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
@@ -69,7 +69,7 @@ namespace LinkedList {
 
 		void removeHalfNodes();
 
-		Direction getReverseDirection(Direction reference_direction);
+		
 
 		void reverseNodeDirections();
 

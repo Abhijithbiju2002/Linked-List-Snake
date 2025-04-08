@@ -33,7 +33,19 @@ namespace Player {
 
 		snake_controller->spawnSnake();
 	}
+	int PlayerService::getPlayerScore()
+	{
+		return snake_controller->getPlayerScore();
+	}
 	void PlayerService::destroy() {
 		delete(snake_controller);
+	}
+	TimeComplexity PlayerService::getTimeComplexity()
+	{
+		return snake_controller->getTimeComplexity();
+	}
+	LinkedListOperations PlayerService::getLastOperation()
+	{
+		return snake_controller->getLastOperation();
 	}
 }

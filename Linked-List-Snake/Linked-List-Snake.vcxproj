@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\UI\Gameplay\GameplayUIController.cpp" />
     <ClCompile Include="source\Food\FoodService.cpp" />
     <ClCompile Include="source\Food\FoodItem.cpp" />
     <ClCompile Include="source\Element\Obstacle.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="source\UI\UIElement\UIView.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header\UI\Gameplay\GameplayUIController.h" />
     <ClInclude Include="Header\Food\FoodService.h" />
     <ClInclude Include="Header\Food\FoodItem.h" />
     <ClInclude Include="Header\Element\ElementData.h" />

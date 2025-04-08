@@ -9,6 +9,7 @@ namespace Level{
 	class LevelView
 	{
 	private:
+
 		const Color background_color = sf::Color(180, 200, 160);
 		const Color border_color = Color::Black;
 
@@ -26,7 +27,8 @@ namespace Level{
 	public:
 		static const int border_thickness = 10;
 		static const int border_offset_left = 40;
-		static const int border_offset_top = 40;
+		static const int border_offset_top = 100; // Increased top offset
+		static const int border_offset_bottom = 40;
 
 		LevelView();
 		~LevelView();

@@ -19,9 +19,27 @@ namespace Player {
 		WAITING,
 		PROCESSING
 	};
+	enum class TimeComplexity {
+		NONE,
+		ONE,
+		N,
+	};
+	enum class LinkedListOperations {
+		NONE,
+		INSERT_AT_HEAD,
+		INSERT_AT_TAIL,
+		INSERT_AT_MID,
+		REMOVE_AT_HEAD,
+		REMOVE_AT_TAIL,
+		REMOVE_AT_MID,
+		DELETE_HALF_LIST,
+		REVERSE_LIST,
+	};
 	class SnakeController
 	{
 	private:
+		int player_score;
+
 		const int initial_snake_lengeth = 10;
 
 		const int restart_duration = 0.f;
@@ -38,6 +56,10 @@ namespace Player {
 		InputState current_input_state;
 
 		SingleLinkedList* single_linked_list;
+
+		TimeComplexity time_complexity;
+		LinkedListOperations last_linked_list_operation;
+
 
 		void processPlayerInput();
 		void updateSnakeDirection();
@@ -72,6 +94,10 @@ namespace Player {
 		
 		void setSnakeState(SnakeState state);
 		SnakeState getSnakeState();
+
+		TimeComplexity getTimeComplexity();
+		LinkedListOperations getLastOperation();
+		int getPlayerScore();
 		
 	};
 

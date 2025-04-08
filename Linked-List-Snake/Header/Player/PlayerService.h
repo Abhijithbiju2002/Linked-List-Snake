@@ -12,7 +12,8 @@ namespace Player {
 
 		void createController();
 		void destroy();
-
+		TimeComplexity time_complexity = TimeComplexity::NONE;
+		LinkedListOperations last_operation = LinkedListOperations::NONE;
 
 	public:
 		PlayerService();
@@ -25,6 +26,11 @@ namespace Player {
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 
 		void spawnPlayer();
+		int getPlayerScore();
+
+		
+		TimeComplexity getTimeComplexity();
+		LinkedListOperations getLastOperation();
 	};
 }
 

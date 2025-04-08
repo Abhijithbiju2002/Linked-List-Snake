@@ -262,17 +262,41 @@ namespace LinkedList {
 		return nodes_position_list;
 	}
 	void SingleLinkedList::shiftNodesAfterRemoval(Node* cur_node) {
+		//if (cur_node == nullptr) return;
+
+		//Node* next_node = cur_node->next;
+
+		//while (next_node != nullptr) {
+		//	cur_node->body_part.setPosition(next_node->body_part.getPosition());
+		//	cur_node->body_part.setDirection(next_node->body_part.getDirection());
+
+		//	cur_node = next_node;
+		//	next_node = next_node->next;
+		//}
 		if (cur_node == nullptr) return;
 
-		Node* next_node = cur_node->next;
+		sf::Vector2i prev_node_pos = cur_node->body_part.getPosition();
+		Direction prev_node_dir = cur_node->body_part.getDirection();
 
-		while (next_node != nullptr) {
-			cur_node->body_part.setPosition(next_node->body_part.getPosition());
-			cur_node->body_part.setDirection(next_node->body_part.getDirection());
+		cur_node = cur_node->next;
 
-			cur_node = next_node;
-			next_node = next_node->next;
+		while (cur_node != nullptr)
+		{
+			// save current node's values before overwriting
+			sf::Vector2i temp_node_pos = cur_node->body_part.getPosition();
+			Direction temp_node_dir = cur_node->body_part.getDirection();
+
+			// apply the previous node's state
+			cur_node->body_part.setPosition(prev_node_pos);
+			cur_node->body_part.setDirection(prev_node_dir);
+
+			// store current as previous for next iteration
+			prev_node_pos = temp_node_pos;
+			prev_node_dir = temp_node_dir;
+
+			cur_node = cur_node->next;
 		}
+	
 	}
 	void SingleLinkedList::removeNodeAtIndex(int index) {
 		if (index < 0 || index >= linked_list_size) return;
@@ -296,6 +320,7 @@ namespace LinkedList {
 		shiftNodesAfterRemoval(cur_node);
 		delete cur_node;
 		linked_list_size--;
+
 	}
 	void  SingleLinkedList::removeNodeAt(int index) {
 		if (index < 0 || index >= linked_list_size)return;
@@ -364,11 +389,15 @@ namespace LinkedList {
 	{
 		switch (reference_direction)
 		{
-		case Direction::UP: return Direction::DOWN;
-		case Direction::DOWN: return Direction::UP;
-		case Direction::LEFT: return Direction::RIGHT;
-		case Direction::RIGHT: return Direction::LEFT;
-		default: return reference_direction;
+		case Direction::UP: 
+			return Direction::DOWN;
+		case Direction::DOWN: 
+			return Direction::UP;
+		case Direction::LEFT:
+			return Direction::RIGHT;
+		case Direction::RIGHT:
+			return Direction::LEFT;
+		//default: return reference_direction;
 		}
 	}
 	void SingleLinkedList::reverseNodeDirections()

@@ -151,7 +151,7 @@ namespace Player {
 	}
 	Direction BodyPart::getPreviousDirection()
 	{
-		return Direction();
+		return previous_direction;
 	}
 	Direction BodyPart::getDirection() {
 

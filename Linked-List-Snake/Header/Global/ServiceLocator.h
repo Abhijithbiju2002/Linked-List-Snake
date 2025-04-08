@@ -8,6 +8,7 @@
 #include "../../Header/Event/EventService.h"
 #include "../../Header/Element/ElementService.h"
 #include "../../Header/Food/FoodService.h"
+#include "../../Header/UI/Gameplay/GameplayUIController.h"
 
 
 
@@ -30,6 +31,8 @@ namespace Global
         Player::PlayerService* player_service;
         Element::ElementService* element_service;
         FoodService* food_service;
+        UI::GameplayUI::GameplayUIController* gameplay_ui_controller;
+
 
         ServiceLocator();
         ~ServiceLocator();
@@ -53,6 +56,8 @@ namespace Global
         Player::PlayerService* getPlayerService();
         Element::ElementService* getElementService();
         FoodService* getFoodService();
+        UI::GameplayUI::GameplayUIController* getGameplayUIController();
+        //void setGameplayUIController(UI::GameplayUI::GameplayUIController* controller);
 
         void deleteServiceLocator();
     };

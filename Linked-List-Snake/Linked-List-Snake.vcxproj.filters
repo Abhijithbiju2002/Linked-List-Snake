@@ -114,6 +114,9 @@
     <ClCompile Include="source\UI\Gameplay\GameplayUIController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Header\LinkedListLib\LinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Main\GameService.h">

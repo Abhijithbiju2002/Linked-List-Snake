@@ -133,7 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Header\LinkedListLib\LinkedList.cpp" />
+    <ClCompile Include="source\LinkedList\LinkedList.cpp" />
     <ClCompile Include="source\UI\Gameplay\GameplayUIController.cpp" />
     <ClCompile Include="source\Food\FoodService.cpp" />
     <ClCompile Include="source\Food\FoodItem.cpp" />

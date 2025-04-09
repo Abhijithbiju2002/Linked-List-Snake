@@ -8,7 +8,7 @@
 
 namespace Player {
 	
-	using namespace LinkedListLib;
+	using namespace LinkedListLib::SingleLinked;
 	using namespace Food;
 	
 	enum SnakeState {

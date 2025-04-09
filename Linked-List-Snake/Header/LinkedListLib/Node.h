@@ -1,7 +1,7 @@
 #pragma once
 #include "../../Header/Player/BodyPart.h"
 
-namespace LinkedList {
+namespace LinkedListLib {
 
 	using namespace Player;
 
@@ -9,6 +9,7 @@ namespace LinkedList {
 	{
 		BodyPart body_part;
 		Node* next = nullptr;
+
 
 	};
 }

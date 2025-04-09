@@ -168,6 +168,10 @@
     <ClCompile Include="source\UI\UIElement\UIView.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header\LinkedListLib\DoubleLinked\DoubleLinkedList.h" />
+    <ClInclude Include="Header\LinkedListLib\DoubleLinked\DoubleNode.h" />
+    <ClInclude Include="Header\LinkedListLib\LinkedList.h" />
+    <ClInclude Include="Header\LinkedListLib\SingleLinked\SingleNode.h" />
     <ClInclude Include="Header\UI\Gameplay\GameplayUIController.h" />
     <ClInclude Include="Header\Food\FoodService.h" />
     <ClInclude Include="Header\Food\FoodItem.h" />
@@ -176,10 +180,10 @@
     <ClInclude Include="Header\Food\FoodType.h" />
     <ClInclude Include="Header\Level\LevelData.h" />
     <ClInclude Include="Header\Level\LevelNumber.h" />
-    <ClInclude Include="Header\LinkedList\SingleLinkedList.h" />
+    <ClInclude Include="Header\LinkedListLib\SingleLinked\SingleLinkedList.h" />
     <ClInclude Include="Header\Player\BodyPart.h" />
     <ClInclude Include="Header\Player\Direction.h" />
-    <ClInclude Include="Header\LinkedList\Node.h" />
+    <ClInclude Include="Header\LinkedListLib\Node.h" />
     <ClInclude Include="Header\Time\TimeService.h" />
     <ClInclude Include="Header\UI\Credits\CreditsScreenUIController.h" />
     <ClInclude Include="Header\UI\Instructions\InstructionsScreenUIController.h" />

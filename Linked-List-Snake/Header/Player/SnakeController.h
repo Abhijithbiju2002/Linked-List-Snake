@@ -1,13 +1,14 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
 #include "../../Header/Player/Direction.h"
-#include "../../Header/LinkedList/SingleLinkedList.h"
+#include "../../Header/LinkedListLib/SingleLinked/SingleLinkedList.h"
 #include "../../Header/Food/FoodType.h"
+
 
 
 namespace Player {
 	
-	using namespace LinkedList;
+	using namespace LinkedListLib;
 	using namespace Food;
 	
 	enum SnakeState {

@@ -1,8 +1,8 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
-#include "../../Header/LinkedList/Node.h"
+#include "../../Header/LinkedListLib/Node.h"
 
-namespace LinkedList {
+namespace LinkedListLib {
 
 	enum class Operation {
 		HEAD,

@@ -26,7 +26,7 @@ namespace Element {
 			obstacle_list[i]->render();
 		}
 	}
-	bool ElementService::processElementsCollision(LinkedList::Node* head_node) {
+	bool ElementService::processElementsCollision(LinkedListLib::Node* head_node) {
 
 		for (int i = 0;i < obstacle_list.size();i++) {
 			if (obstacle_list[i]->getObstaclePosition() == head_node->body_part.getNextPosition() ||

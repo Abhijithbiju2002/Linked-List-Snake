@@ -37,18 +37,36 @@ namespace LinkedListLib{
 		}
 
 		void SingleLinkedList::insertNodeAtTail() {
+			//Node* new_node = createNode();
+			//if (!head_node) {
+			//	head_node = new_node;
+			//	initializeNode(new_node, nullptr, Operation::TAIL);
+			//}
+			//else {
+			//	Node* cur = head_node;
+			//	while (cur->next) cur = cur->next;
+			//	cur->next = new_node;
+			//	initializeNode(new_node, cur, Operation::TAIL);
+			//}
+			//linked_list_size++;
+			linked_list_size++;
 			Node* new_node = createNode();
-			if (!head_node) {
+			Node* cur_node = head_node;
+
+			if (cur_node == nullptr)
+			{
 				head_node = new_node;
 				initializeNode(new_node, nullptr, Operation::TAIL);
+				return;
 			}
-			else {
-				Node* cur = head_node;
-				while (cur->next) cur = cur->next;
-				cur->next = new_node;
-				initializeNode(new_node, cur, Operation::TAIL);
+
+			while (cur_node->next != nullptr)
+			{
+				cur_node = cur_node->next;
 			}
-			linked_list_size++;
+
+			cur_node->next = new_node;
+			initializeNode(new_node, cur_node, Operation::TAIL);
 		}
 
 		void SingleLinkedList::insertNodeAtIndex(int index) {

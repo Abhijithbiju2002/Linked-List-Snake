@@ -28,6 +28,8 @@ namespace Player {
 		void spawnPlayer(LinkedListType level_type);
 		int getPlayerScore();
 
+		bool isPlayerDead();
+
 		
 		TimeComplexity getTimeComplexity();
 		LinkedListOperations getLastOperation();

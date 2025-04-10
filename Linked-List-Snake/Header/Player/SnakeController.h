@@ -79,6 +79,8 @@ namespace Player {
 
 		void OnFoodCollected(FoodType food_type);
 
+		
+
 		void handleRestart();
 		void reset();
 		void destroy();
@@ -97,6 +99,8 @@ namespace Player {
 		void delayedUpdate();
 		void spawnSnake();
 		void respawnSnake();
+
+		bool isSnakeDead();
 
 		void createLinkedList(LinkedListType level_type);
 

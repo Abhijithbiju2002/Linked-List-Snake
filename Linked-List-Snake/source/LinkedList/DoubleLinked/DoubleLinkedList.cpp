@@ -158,14 +158,46 @@ namespace LinkedListLib {
 
 		void DoubleLinkedList::removeNodeAtMiddle()
 		{
+			if (!head_node)return;
+			int midIndex = findMiddleNode();
+			removeNodeAtIndex(midIndex);
 		}
 
 		void DoubleLinkedList::removeNodeAt(int index)
 		{
+			removeNodeAtIndex(index);
 		}
 
 		void DoubleLinkedList::removeNodeAtIndex(int index)
 		{
+			if (index < 0 || index >= linked_list_size)return;
+
+			if (index == 0) {
+				removeNodeAtHead();
+				return;
+			}
+			Node* cur = head_node;
+			Node* prev = nullptr;
+			int current_index = 0;
+
+			while (cur && current_index < index) {
+				prev = cur;
+				cur = cur->next;
+				current_index++;
+			}
+			if (!cur) return;
+
+			Node* next = cur->next;
+			if (next) {
+				static_cast<DoubleNode*>(next)->previous = static_cast<DoubleNode*>(prev);
+			}
+			if (prev) {
+				prev->next = next;
+			}
+			shiftNodesAfterRemoval(cur);
+			delete cur;
+			linked_list_size--;
+
 		}
 
 		void DoubleLinkedList::removeAllNodes()
@@ -178,6 +210,26 @@ namespace LinkedListLib {
 
 		void DoubleLinkedList::shiftNodesAfterRemoval(Node* cur_node)
 		{
+			if (!cur_node) return;
+
+			sf::Vector2i prev_pos = cur_node->body_part.getPosition();
+			Direction prev_dir = cur_node->body_part.getDirection();
+
+			cur_node = cur_node->next;
+
+			while (cur_node)
+			{
+				sf::Vector2i temp_pos = cur_node->body_part.getPosition();
+				Direction temp_dir = cur_node->body_part.getDirection();
+
+				cur_node->body_part.setPosition(prev_pos);
+				cur_node->body_part.setDirection(prev_dir);
+
+				prev_pos = temp_pos;
+				prev_dir = temp_dir;
+
+				cur_node = cur_node->next;
+			}
 		}
 
 		Direction DoubleLinkedList::reverse()

@@ -5,6 +5,7 @@
 #include "../../Header/UI/Instructions/InstructionsScreenUIController.h"
 #include "../../Header/UI/Credits/CreditsScreenUIController.h"
 #include "../../Header/UI/Interface/IUIController.h"
+#include "../../Header/UI/LinkedListSelection/LinkedListSelectionUIController.h"
 
 namespace UI
 {
@@ -14,8 +15,10 @@ namespace UI
 		SplashScreen::SplashScreenUIController* splash_screen_controller;
 		MainMenu::MainMenuUIController* main_menu_controller;
 		LevelSelection::LevelSelectionUIController* level_selection_ui_controller;
+		UI::LinkedListSelection::LinkedListSelectionUIController* linked_list_selection_ui_controller;
 		Instructions::InstructionsScreenUIController* instructions_screen_ui_controller;
 		Credits::CreditsScreenUIController* credits_screen_ui_controller;
+
 
 
 		void createControllers();

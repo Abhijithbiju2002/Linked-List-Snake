@@ -61,14 +61,63 @@ namespace LinkedListLib {
 
 		void DoubleLinkedList::insertNodeAtMiddle()
 		{
+			if (!head_node) {
+				insertNodeAtHead();
+				return;
+			}
+			int midIndex = findMiddleNode();
+			insertNodeAtIndex(midIndex);
 		}
 
 		void DoubleLinkedList::insertNodeAtIndex(int index)
 		{
+			if (index <0 || index > linked_list_size)
+				return;
+
+			if (index == 0) {
+				insertNodeAtHead();
+				return;
+			}
+
+			Node* new_node = createNode();
+			Node* cur = head_node;
+			Node* prev = nullptr;
+			int current_index = 0;
+
+			while (cur && current_index < index) {
+				prev = cur;
+				cur = cur->next;
+				current_index++;
+			}
+			// Insert the new node between prev and cur
+			new_node->next = cur;
+			if (cur)
+				static_cast<DoubleNode*>(cur)->previous = new_node;
+
+			prev->next = new_node;
+			static_cast<DoubleNode*>(new_node)->previous = prev;
+
+			initializeNode(new_node, prev, Operation::MID);
+			shiftNodesAfterInsertion(new_node, cur, prev);
+			linked_list_size++;
 		}
 
 		void DoubleLinkedList::shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node)
 		{
+			Node* next = cur_node;
+			Node* current = new_node;
+			
+			while (current && next) {
+				current->body_part.setPosition(next->body_part.getPosition());
+				current->body_part.setDirection(next->body_part.getDirection());
+
+				prev_node = current;
+				current = next;
+				next = next->next;
+			}
+			if (current) {
+				initializeNode(current, prev_node, Operation::TAIL);
+			}
 		}
 
 		void DoubleLinkedList::removeNodeAtTail()

@@ -1,0 +1,38 @@
+#pragma once
+#include "../../Header/UI/MainMenu/MainMenuUIController.h"
+#include "../../Header/UI/SplashScreen/SplashScreenUIController.h"
+#include "../../Header/UI/LevelSelection/LevelSelectionUIController.h"
+#include "../../Header/UI/Instructions/InstructionsScreenUIController.h"
+#include "../../Header/UI/Credits/CreditsScreenUIController.h"
+#include "../../Header/UI/Interface/IUIController.h"
+#include "../../Header/UI/LinkedListSelection/LinkedListSelectionUIController.h"
+
+namespace UI
+{
+	class UIService
+	{
+	private:
+		SplashScreen::SplashScreenUIController* splash_screen_controller;
+		MainMenu::MainMenuUIController* main_menu_controller;
+		LevelSelection::LevelSelectionUIController* level_selection_ui_controller;
+		UI::LinkedListSelection::LinkedListSelectionUIController* linked_list_selection_ui_controller;
+		Instructions::InstructionsScreenUIController* instructions_screen_ui_controller;
+		Credits::CreditsScreenUIController* credits_screen_ui_controller;
+
+
+
+		void createControllers();
+		void initializeControllers();
+		Interface::IUIController* getCurrentUIController();
+		void destroy();
+
+	public:
+		UIService();
+		~UIService();
+
+		void initialize();
+		void update();
+		void render();
+		void showScreen();
+	};
+}

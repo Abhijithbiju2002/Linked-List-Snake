@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "../../Header/Level/LevelService.h"
-#include "../../Header/Level/LevelNumber.h"
+#include "../../Header/Level/LevelConfig.h"
 #include"../../Header/Element/ElementData.h"
 
 

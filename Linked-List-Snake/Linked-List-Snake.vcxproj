@@ -181,7 +181,7 @@
     <ClInclude Include="Header\Element\ElementService.h" />
     <ClInclude Include="Header\Food\FoodType.h" />
     <ClInclude Include="Header\Level\LevelData.h" />
-    <ClInclude Include="Header\Level\LevelNumber.h" />
+    <ClInclude Include="Header\Level\LevelConfig.h" />
     <ClInclude Include="Header\LinkedListLib\SingleLinked\SingleLinkedList.h" />
     <ClInclude Include="Header\Player\BodyPart.h" />
     <ClInclude Include="Header\Player\Direction.h" />

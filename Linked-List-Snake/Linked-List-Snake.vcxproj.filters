@@ -179,7 +179,7 @@
     <ClInclude Include="Header\UI\UIElement\RectangleShapeView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Level\LevelNumber.h">
+    <ClInclude Include="Header\Level\LevelConfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header\Level\LevelData.h">

@@ -84,17 +84,15 @@ namespace UI
 		void LinkedListSelectionUIController::singleLinkCallback()
 		{
 			ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
-			// Set selected list type here in a service or global variable
-			// e.g., GameSettings::setListType(ListType::SINGLE);
 			GameService::setGameState(GameState::GAMEPLAY);
+			ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LinkedListType::SINGLE_LINKED_LIST);
 		}
 
 		void LinkedListSelectionUIController::doubleLinkCallback()
 		{
 			ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
-			// Set selected list type
-			// GameSettings::setListType(ListType::DOUBLE);
 			GameService::setGameState(GameState::GAMEPLAY);
+			ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LinkedListType::DOUBLE_LINKED_LIST);
 		}
 
 		void LinkedListSelectionUIController::menuCallback()

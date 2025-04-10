@@ -25,7 +25,7 @@ namespace Player {
 
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 
-		void spawnPlayer();
+		void spawnPlayer(LinkedListType level_type);
 		int getPlayerScore();
 
 		

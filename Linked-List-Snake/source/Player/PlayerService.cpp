@@ -17,7 +17,7 @@ namespace Player {
 	}
 	void PlayerService::initialize() {
 		snake_controller->initialize();
-		spawnPlayer();
+		//spawnPlayer();
 	}
 	void PlayerService::update() {
 		snake_controller->update();
@@ -29,8 +29,9 @@ namespace Player {
 
 		return snake_controller->getCurrentSnakePositionList();
 	}
-	void  PlayerService::spawnPlayer() {
+	void  PlayerService::spawnPlayer(LinkedListType level_type) {
 
+		snake_controller->createLinkedList(level_type);
 		snake_controller->spawnSnake();
 	}
 	int PlayerService::getPlayerScore()

@@ -3,6 +3,11 @@
 #include "../../Header/Player/Direction.h"
 #include "../../Header/LinkedListLib/SingleLinked/SingleLinkedList.h"
 #include "../../Header/Food/FoodType.h"
+#include "../../Header/LinkedListLib/LinkedList.h"
+#include "../../Header/LinkedListLib/DoubleLinked/DoubleLinkedList.h"
+#include "../../Header/LinkedListLib/SingleLinked/SingleLinkedList.h"
+#include "../../Header/Level/LevelConfig.h"
+
 
 
 
@@ -10,6 +15,7 @@ namespace Player {
 	
 	using namespace LinkedListLib::SingleLinked;
 	using namespace Food;
+	using namespace Level;
 	
 	enum SnakeState {
 		ALIVE,
@@ -56,7 +62,8 @@ namespace Player {
 		Direction current_snake_direction;
 		InputState current_input_state;
 
-		SingleLinkedList* single_linked_list;
+		//SingleLinkedList* single_linked_list;
+		LinkedListLib::LinkedList* linked_list;
 
 		TimeComplexity time_complexity;
 		LinkedListOperations last_linked_list_operation;
@@ -76,19 +83,22 @@ namespace Player {
 		void reset();
 		void destroy();
 
-		void createLinkedList();
+		
 		
 
 	public:
 		SnakeController();
 		~SnakeController();
 
-		void initialize();     
+		void initialize();
+		void initializeLinkedList();
 		void update();   
 		void render();   
 		void delayedUpdate();
 		void spawnSnake();
 		void respawnSnake();
+
+		void createLinkedList(LinkedListType level_type);
 
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 		

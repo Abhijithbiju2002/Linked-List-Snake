@@ -1,4 +1,4 @@
-#include "UI/UIElement/AnimatedImageView.h"
+#include "../../Header/UI/UIElement/AnimatedImageView.h"
 
 namespace UI
 {

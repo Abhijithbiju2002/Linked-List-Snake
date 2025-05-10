@@ -1,6 +1,6 @@
-#include "Event/EventService.h"
-#include "Global/ServiceLocator.h"
-#include "Graphics/GraphicService.h"
+#include "../../Header/Event/EventService.h"
+#include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Graphics/GraphicService.h"
 #include <iostream>
 
 namespace Event
